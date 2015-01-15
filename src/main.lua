@@ -25,10 +25,22 @@ end
 print(a, b)
 --]]
 
-local numbers = {1, 2, 3, 4, 5, 6, 8}
-function iterate(list)
-  for k, v in ipairs(list) do
-    print(k.."="..v)
+function iterateK(t)
+  for k in pairs(t) do
+    print(k.."="..t[k])
   end
 end
-iterate(numbers)
+
+local numbers = {
+  ["Monday"]=1, ["Tuesday"]=2, ["Wednesday"]=3, ["Thursday"]=4, ["Friday"]=5, ["Saturday"]=6, ["Sunday"]=7}
+function reverseTable(t)
+  local rt = {}
+  for k in pairs(t) do
+    local v = t[k]
+    rt[v] = k
+  end
+  return rt
+end
+
+local reverseNumbers = reverseTable(numbers)
+iterateK(reverseNumbers)
