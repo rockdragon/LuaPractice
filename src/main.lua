@@ -68,9 +68,30 @@ end
 rename{old="hello", new="world"}
 --]]
 
---closure
+--[[closure
 names = {"Peter", "Paul", "Mary"} 
 print("before sorting:",unpack(names))
 grades = {Mary = 10, Paul = 7, Peter = 8} 
 table.sort(names, function(a, b) return grades[a] > grades[b] end)
 print("after sorting:", unpack(names))
+--]]
+
+--closure
+function powerOfN(n)
+  return function(m)
+    local result = 1
+    for i=1, n do
+      result = result * m
+    end
+    return result
+  end
+end
+
+print("M:")
+local m = io.read("*number")
+print("M的N:")
+local n = io.read("*number")
+if m and n then
+  local power = powerOfN(n)
+  print("结果："..power(m))
+end
