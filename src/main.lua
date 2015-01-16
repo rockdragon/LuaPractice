@@ -25,14 +25,15 @@ end
 print(a, b)
 --]]
 
+local numbers = {
+  ["Monday"]=1, ["Tuesday"]=2, ["Wednesday"]=3, ["Thursday"]=4, ["Friday"]=5, ["Saturday"]=8, ["Sunday"]=7}
+--[[
 function iterateK(t)
   for k in pairs(t) do
     print(k.."="..t[k])
   end
 end
 
-local numbers = {
-  ["Monday"]=1, ["Tuesday"]=2, ["Wednesday"]=3, ["Thursday"]=4, ["Friday"]=5, ["Saturday"]=8, ["Sunday"]=7}
 function reverseTable(t)
   local rt = {}
   for k in pairs(t) do
@@ -44,3 +45,32 @@ end
 
 local reverseNumbers = reverseTable(numbers)
 iterateK(reverseNumbers)
+
+function p(...)  
+  for k, v in ipairs{...} do
+    print(k, v)
+  end
+end
+
+p("w", "h", "y")
+
+function z(...)
+  local arg = {...}
+  return arg
+end
+
+w = z(1,2,3)
+print(unpack(w))
+
+function rename(arg)
+  print(arg.old, arg.new)
+end
+rename{old="hello", new="world"}
+--]]
+
+--closure
+names = {"Peter", "Paul", "Mary"} 
+print("before sorting:",unpack(names))
+grades = {Mary = 10, Paul = 7, Peter = 8} 
+table.sort(names, function(a, b) return grades[a] > grades[b] end)
+print("after sorting:", unpack(names))
