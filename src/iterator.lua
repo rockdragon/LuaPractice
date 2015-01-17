@@ -1,7 +1,7 @@
 module = {}
 
 --[[
-  for-in input args:
+  for-in expected input args:
     1, iterator
     2, table
     3, position

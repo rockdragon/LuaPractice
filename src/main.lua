@@ -30,7 +30,7 @@ print(s())
 local lib = require("iterator")
 local list = {"hello", "nerd", "geneartion."}
 
-for k, v, t in lib.traverse(list) do
-  print(k, v, t)
+for k, v in lib.traverse(list) do
+  print(k, v)
 end
 
