@@ -14,14 +14,15 @@ module = {}
 
 --]]
 function getnext(list, pos)
-  pos = pos or 0
   pos = pos + 1
   local v = list[pos]
-  if v then return pos, v else return nil end
+  if v then 
+    return pos, v
+  end
 end
 
 function module.traverse(list)
-  return getnext, list, nil
+  return getnext, list, 0
 end
 
 return module
