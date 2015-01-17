@@ -11,7 +11,8 @@ module = {}
     
   for-in output result:
     k, v
-
+    
+    ==> iteration will be terminated when k is nil
 --]]
 function getnext(list, pos)
   pos = pos + 1
