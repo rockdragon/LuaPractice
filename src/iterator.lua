@@ -6,7 +6,7 @@ module = {}
     2, table
     3, position
     
-    ==> in each of iteration, for-in uses the iterator as iterator(table, position)
+    ==> in each of iteration, for-in uses the iterator look like iterator(table, position)
     ==>   itertaor is responsible for auto-incresing position
     
   for-in output result:
@@ -27,3 +27,13 @@ function module.traverse(list)
 end
 
 return module
+
+--迭代器调用
+--[[
+local lib = require("iterator")
+local list = {"hello", "nerd", "geneartion."}
+
+for k, v in lib.traverse(list) do
+  print(k, v)
+end
+--]]
