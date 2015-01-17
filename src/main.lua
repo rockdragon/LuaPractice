@@ -108,5 +108,14 @@ function foo(n, m)
     return m
   end
 end
+print("accumulation:" .. foo(5, 0))
 
-print(foo(5, 0))
+
+function fibonacci(n, acc1, acc2)
+  if n <=2 then
+    return acc1
+  else
+    return fibonacci(n-1, acc1 + acc2, acc1)
+  end
+end
+print("Fibonacci:" .. fibonacci(8, 1, 1))
