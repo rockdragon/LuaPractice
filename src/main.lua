@@ -23,10 +23,11 @@ if a < b then
   print(a)
 end
 print(a, b)
---]]
 
 local numbers = {
   ["Monday"]=1, ["Tuesday"]=2, ["Wednesday"]=3, ["Thursday"]=4, ["Friday"]=5, ["Saturday"]=8, ["Sunday"]=7}
+  --]]
+  
 --[[
 function iterateK(t)
   for k in pairs(t) do
@@ -77,6 +78,7 @@ print("after sorting:", unpack(names))
 --]]
 
 --closure
+--[[
 function powerOfN(n)
   return function(m)
     local result = 1
@@ -95,3 +97,16 @@ if m and n then
   local power = powerOfN(n)
   print("结果："..power(m))
 end
+--]]
+
+
+--尾递归
+function foo(n, m)
+  if n > 0 then
+    return foo(n-1, n + m)
+  else 
+    return m
+  end
+end
+
+print(foo(5, 0))
