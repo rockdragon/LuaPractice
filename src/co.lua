@@ -15,4 +15,5 @@ end
 print "enter a file name:"
 local name = io.read()
 co = coroutine.create(function() pcall(readFile, name, "r") end)
+coroutine.resume(co) -- execution
 print(coroutine.status(co))
