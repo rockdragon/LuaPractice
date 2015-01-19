@@ -12,3 +12,4 @@ while true do
   if status == "closed" then break end
 end
 
+c:close()
