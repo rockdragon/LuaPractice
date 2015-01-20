@@ -16,7 +16,7 @@ lib.insert(prefix(w1, w2), NOWORD)
 w1 = NOWORD; w2 = NOWORD    --re-init
 for i=1, MAXGEN do
   local list = lib.statetab[lib.prefix(w1, w2)]
-  -- random choice
+  -- random choice 
   local r = math.random(#list)
   local nextword = list[r]
   if nextword == NOWORD then return end
