@@ -32,9 +32,9 @@ function dispatch()
   local i = 1
   local connections = {}
   while true do
-    if threads[i] == nil then
+    if threads[i] == nil then             -- any more thread?
       if threads[1] == nil then break end
-      i = 1
+      i = 1                               -- restart loop
       connections = {}
     end
     local status, res = coroutine.resume(threads[i])
@@ -45,7 +45,7 @@ function dispatch()
       connections[#connections + 1] = res
       if #connections == #threads then
         socket.select(connections)
-      end      
+      end
     end    
   end
 end
