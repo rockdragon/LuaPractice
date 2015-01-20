@@ -10,7 +10,7 @@ for w in lib.allwords() do
   lib.insert(lib.prefix(w1, w2), w)
   w1 = w2; w2 = w
 end
-lib.insert(prefix(w1, w2), NOWORD)
+lib.insert(lib.prefix(w1, w2), NOWORD)
 
 -- generate text
 w1 = NOWORD; w2 = NOWORD    --re-init
