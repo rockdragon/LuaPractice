@@ -1,10 +1,10 @@
 local http = require("socket.http")
 
- local response_body = {}
+local response_body = {}
  
 local res, code, response_headers =  http.request{
     method="GET",
-    url = "http://localhost/",
+    url = "http://myhost.com/",
     sink = ltn12.sink.table(response_body)
   }
 
