@@ -1,22 +1,11 @@
-local mt = {}
 
-function init(mt, N)
-  for i = 1, N do
-    mt[i] = {}
-    for j =1 ,i do
-      mt[i][j] = 0
-    end
+function iter(a)
+  for k, v in pairs(a) do
+    print(k, v)
   end
 end
 
-function iter(mt, N)
-  for i = 1, N do
-    for j =1 ,i do
-      io.write(mt[i][j])
-    end
-    io.write("\n")
-  end
-end
-
-init(mt, 10)
-iter(mt, 10)
+local a = {1 , 2, 103.4, 6, 9}
+a.first = 3
+a.first = a.first - 1
+print(a[a.first])
