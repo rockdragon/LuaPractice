@@ -21,4 +21,6 @@ function buffer.tostring(delimiter)
   return table.concat(buffer.__buf, delimiter or ",")
 end
 
+function buffer.table() return buffer.__buf end
+
 return buffer

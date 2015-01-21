@@ -20,20 +20,11 @@ end
 print(buffer.tostring())
 
 --]]
-
---[[ base control
 local str1 = "hello,,world,yes,nlo"
-local pos = 1, s, e
+local s, e  = nil, nil
 repeat
-  s, e =  string.find (str1, "lo", pos)
-  if s then 
-    pos = e + 1 
-    print(s, e)
-  end  
-until s == nil
---]]
-
-
-
+  s, e =  string.find (str1, "lo")
+  print(s, e)
+until s
 
 
