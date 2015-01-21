@@ -1,11 +1,10 @@
+local util = require("ds.util")
 local set = require("ds.set")
-
-function iter(a)
-  for k, v in pairs(a) do
-    print(k, v)
-  end
-end
+local bag = require("ds.bag")
 
 local a = {"yes", "no", "qa"}
 local s = set.new(a)
-iter(s)
+util.iter(s)
+
+local b = bag.new(a)
+util.iter(b)
