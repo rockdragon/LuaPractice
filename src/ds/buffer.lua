@@ -10,19 +10,15 @@ end
 function buffer.concat(list)
   for _, v in pairs(list) do
     table.insert(buffer.__buf, tostring(v))
-  end  
+  end
 end
 
 function buffer.append(v)
   table.insert(buffer.__buf, tostring(v))
 end
 
-function buffer.tostring()
-  local res = ""
-  for _, v in pairs(buffer.__buf) do
-    res = res .. v
-  end
-  return res
+function buffer.tostring(delimiter)
+  return table.concat(buffer.__buf, delimiter or ",")
 end
 
 return buffer

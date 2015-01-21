@@ -12,5 +12,8 @@ bag.add(b, "yes")
 util.iter(b)
 
 local buffer = require("ds.buffer").new()
-buffer.concat({"started", "LuaPractice", "workspace" ,"main"})
+print("please input buffer string:wo")
+for line in io.lines() do
+  if line ~= "" then buffer.append(line) else break end
+end
 print(buffer.tostring())
