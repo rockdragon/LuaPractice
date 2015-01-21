@@ -1,3 +1,4 @@
+local set = require("ds.set")
 
 function iter(a)
   for k, v in pairs(a) do
@@ -5,7 +6,6 @@ function iter(a)
   end
 end
 
-local a = {1 , 2, 103.4, 6, 9}
-a.first = 3
-a.first = a.first - 1
-print(a[a.first])
+local a = {"yes", "no", "qa"}
+local s = set.new(a)
+iter(s)
