@@ -40,4 +40,7 @@ function serialize(o)
 end
 
 local t = {"1", "2", "hello", 1, 3}
+local f = io.open("storage\\fdata", "a+")
+io.output(f)
 serialize(t)
+f:close()
