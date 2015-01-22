@@ -16,4 +16,14 @@ local s5 = s1 - s2
 Set.print(s5)
 
 --类型检查
-local s6 = s1 + {1, 2}
+--local s6 = s1 + {1, 2}
+
+--相等性
+print(s1 < s2)
+print(s2 < s1)
+print(s2 == s1)
+
+--保护metatable
+print(getmetatable(s1))
+--setmetatable(s1, {})
+
