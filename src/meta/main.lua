@@ -10,3 +10,10 @@ Set.print(s3)
 --交集
 local s4 = s1 * s2
 Set.print(s4)
+
+--差集
+local s5 = s1 - s2
+Set.print(s5)
+
+--类型检查
+local s6 = s1 + {1, 2}
