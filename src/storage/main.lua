@@ -31,7 +31,7 @@ function serialize(o)
     for k, v in pairs(o) do
       io.write(" ", k , "=")
       serialize(v)
-      io.write(",\n")
+      if k ~= #o then io.write(",\n") end
     end
     io.write("\n}")
   else
