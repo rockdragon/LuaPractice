@@ -1,3 +1,4 @@
+--[[
 local Set = require("meta.set")
 
 local s1 = Set.new{10, 20, 30, 50}
@@ -26,4 +27,11 @@ print(s2 == s1)
 --保护metatable
 print(getmetatable(s1))
 --setmetatable(s1, {})
+--]]
 
+
+local Window = require("meta.window")
+
+local w = Window.new{x=10, y=20}
+print(w.x, w.width)
+print(rawget(w, width))
