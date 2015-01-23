@@ -30,6 +30,7 @@ print(getmetatable(s1))
 --]]
 
 
+--[[
 local Window = require("meta.window")
 
 local w = Window.new{x=10, y=20}
@@ -40,3 +41,15 @@ w.name = "aho"
 print(Window.prototype.name)
 rawset(w, "xxx", "mamai")
 print(w.xxx)
+--]]
+
+
+-- object field track
+local Track = require("meta.track")
+
+local o = Track.new{x=10, y=20}
+print(o.x)
+o.www = "haha"
+print(o.www)
+print(o.www)
+o.www = "gaga"

@@ -1,7 +1,6 @@
 Track = {}
 
-t = {}
-local _t = t -- preserve a private accessor
+local _t = {}
 
 local mt = {
   __index = function(t, k)
@@ -9,9 +8,14 @@ local mt = {
     return _t[k]
   end,
   __newindex = function(t, k, v)
-    print("* update of element " .. tostring(k))
+    print("* update of element " .. tostring(k) .. " to " .. string.format("%q", v))
     _t[k] = v
   end  
 }
+
+function Track.new(o)
+  setmetatable(o, mt)
+  return o
+end
 
 return Track
