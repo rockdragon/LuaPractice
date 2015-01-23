@@ -38,3 +38,5 @@ print(rawget(w, width))
 
 w.name = "aho"
 print(Window.prototype.name)
+rawset(w, "xxx", "mamai")
+print(w.xxx)
