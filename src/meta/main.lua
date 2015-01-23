@@ -53,3 +53,9 @@ o.www = "haha"
 print(o.www)
 print(o.www)
 o.www = "gaga"
+
+-- readonly
+local readOnly = require("meta.readOnly")
+o = readOnly.readOnly(o)
+o.x = "222"
+o.y = "333"
