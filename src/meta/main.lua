@@ -35,3 +35,6 @@ local Window = require("meta.window")
 local w = Window.new{x=10, y=20}
 print(w.x, w.width)
 print(rawget(w, width))
+
+w.name = "aho"
+print(Window.prototype.name)

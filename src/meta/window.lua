@@ -12,4 +12,6 @@ Window.mt.__index = function(table, key)
   return Window.prototype[key]
 end
 
+Window.mt.__newindex = Window.prototype
+
 return Window
