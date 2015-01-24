@@ -43,7 +43,7 @@ rawset(w, "xxx", "mamai")
 print(w.xxx)
 --]]
 
-
+--[[
 -- object field track
 local Track = require("meta.track")
 
@@ -59,3 +59,15 @@ local readOnly = require("meta.readOnly")
 o = readOnly.readOnly(o)
 o.x = "222"
 o.y = "333"
+
+--]]
+
+local object = require("meta.object")
+local instance1 = object.new()
+print(instance1:getname("mike"))
+
+local instance2 = object.new()
+instance2.lily = "yes"
+print(instance2:getname("lily"))
+
+print(instance1:getname("lily"))
