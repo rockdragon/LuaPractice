@@ -17,3 +17,7 @@ print(debug.getinfo(2).what) -- C
 dofile("global/strict.lua")
 _G.gaga = "haha"
 print(_G.gaga)
+
+for k, v in pairs(package.loaded) do
+  print(k, v)
+end
