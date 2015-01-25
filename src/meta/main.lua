@@ -71,3 +71,5 @@ instance2.lily = "yes"
 print(instance2:getname("lily"))
 
 print(instance1:getname("lily"))
+
+print(package.loaded["meta.object"])
