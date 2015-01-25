@@ -13,7 +13,9 @@ function createClass(...)
   
   setmetatable(c, {
       __index = function(t, k)
-        return search(k, parents)
+        local v = search(k, parents)
+        t[k] = v -- caching for next search
+        return v
       end
     })
   c.__index = c
