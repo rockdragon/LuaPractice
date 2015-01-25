@@ -8,7 +8,7 @@ end
 function object.new()
   local o = {}
   setmetatable(o, {
-    __index = object_class
+    __index = object_meta
   })
   return o
 end
