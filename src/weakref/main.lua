@@ -1,10 +1,10 @@
 local util = require("ds.util")
 
-a = {}
-b = {__mode = "k"}
+local a = {}
+local b = {__mode = "k"}
 setmetatable(a, b)
 
-key = {}
+local key = {}
 a[key] = 1
 key = {}
 a[key] = 2
