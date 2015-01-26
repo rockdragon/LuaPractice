@@ -1,16 +1,23 @@
 local util = require("ds.util")
 
-local a = {}
-local b = {__mode = "v"}
-setmetatable(a, b)
+local results = {}
+setmetatable(results, {__mode = "kv" }) --weak ref both k&v
 
-local v = {}
-a[1] = v
-v = {}
-a[2] = v
+function mem_loadstring(s)
+  local res = results[s]
+  if res == nil then
+    res = assert(loadstring(s))
+    results[s] = res
+  end  
+  return res
+end
 
-print("", "before GC:")
-util.iter(a)
-collectgarbage();
-print("", "after GC:")
-util.iter(a)
+function createRGB(r, g, b)
+  local key = r.."-"..g.."-"..b
+  local color = results[key]
+  if color == nil then
+    color = {red = r, green = g, blue = b}
+    results[key] = color
+  end
+  return color
+end
