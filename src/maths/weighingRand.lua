@@ -48,8 +48,7 @@ function WeighingRand.new(t)
   return function() -- interface
     local r = math.random(100)
     print("random seed:", r)
-    local result = pivot.locate(r)
-    return result
+    return pivot.locate(r)    
   end
 end
 
