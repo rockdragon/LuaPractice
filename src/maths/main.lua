@@ -12,3 +12,6 @@ for i=1, 10 do
   print(rand())
 end
 
+collectgarbage()
+print(rand())
+
