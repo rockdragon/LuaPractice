@@ -19,3 +19,8 @@ for v in string.gmatch([[<a href="http://www.douban.com/">台北</a>]], "%b<>") 
 end
 
 print(tonumber("ff", 16))
+
+a = true
+print((a and {"2"} or {"3"})[1])
+
+print(string.match("hello", "()ll()"))
