@@ -106,3 +106,4 @@ for _, v in pairs(m) do
   io.write((t and {t} or {v})[1])
 end
 io.write("\n")
+print(os.clock().."s")
