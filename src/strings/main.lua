@@ -17,3 +17,5 @@ print(r, c)
 for v in string.gmatch([[<a href="http://www.douban.com/">台北</a>]], "%b<>") do
   print(v)
 end
+
+print(tonumber("ff", 16))

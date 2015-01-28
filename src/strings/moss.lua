@@ -59,10 +59,6 @@ local m = {".--.", ".-", "-.", ".-.-.-", "-...", ".-", "..",
    
 for _, v in pairs(m) do
   local t = trans(v)
-  if t == nil then
-    io.write(v) 
-  else 
-    io.write(t)
-  end  
+  io.write((t and {t} or {v})[1])
 end
 io.write("\n")
