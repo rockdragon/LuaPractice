@@ -24,7 +24,6 @@ mos["w"] = ".--"
 mos["x"] = "-..-"
 mos["y"] = "-.--"
 mos["z"] = "--.."
-
 mos["1"] = ".----"
 mos["2"] = "..---"
 mos["3"] = "...--"
@@ -41,8 +40,51 @@ mos["()"] = "-.--.-"
 mos["-"] = "-....-"
 mos["."] = ".-.-.-"
 
-local cache = {}
+local r_mos = {}
+r_mos[".-"]	   =  "a"
+r_mos["-..."]  =  "b"
+r_mos["-.-."]  =  "c"
+r_mos["-.."]   =  "d"
+r_mos["."]	   =  "e"
+r_mos["..-."]  =  "f"
+r_mos["...."]  =  "h"
+r_mos[".."]	   =  "i"
+r_mos[".---"]  =  "j"
+r_mos["-.-"]   =  "k"
+r_mos[".-.."]  =  "l"
+r_mos["--"]	   =  "m"
+r_mos["-."]	   =  "n"
+r_mos["---"]   =  "o"
+r_mos[".--."]  =  "p"
+r_mos["--.-"]  =  "q"
+r_mos[".-."]   =  "r"
+r_mos["..."]   =  "s"
+r_mos["-"]	   =  "t"
+r_mos["..-"]   =  "u"
+r_mos["...-"]  =  "v"
+r_mos[".--"]   =  "w"
+r_mos["-..-"]  =  "x"
+r_mos["-.--"]  =  "y"
+r_mos["--.."]  =  "z"
+r_mos[".----"] =  "1"
+r_mos["..---"] =  "2"
+r_mos["...--"] =  "3"
+r_mos["....-"] =  "4"
+r_mos["....."] =  "5"
+r_mos["-...."] =  "6"
+r_mos["--..."] =  "7"
+r_mos["---.."] =  "8"
+r_mos["----."] =  "9"
+r_mos["-----"] =  "0"
+r_mos["..--.."]=  "?"
+r_mos["-..-."] =  "/"
+r_mos["-.--.-"]=  "()"
+r_mos["-....-"]=  "-"
+r_mos[".-.-.-"]=  "."
+
+--local cache = {}
 function trans(s)
+  --[[
   if not cache[s] then
     for k, v in pairs(mos) do
       cache[v] = k
@@ -50,6 +92,8 @@ function trans(s)
     end  
   end
   return cache[s]
+  --]]
+  return r_mos[s]
 end
 
 local m = {".--.", ".-", "-.", ".-.-.-", "-...", ".-", "..",
