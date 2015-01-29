@@ -5,6 +5,7 @@ while true do
   local lines, rest = f:read(BUFSIZE, "*l")
   if not lines then break end
   if rest then lines = lines .. rest .. "\n" end
+  print(rest)
   cc = cc + #lines
   local _, t = string.gsub(lines, "%S+", "")
   wc = wc + t
