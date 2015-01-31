@@ -10,7 +10,6 @@ end
 --]]
 function fractionRound(num, n)
   local int, mod = math.modf(num)
-  print(int, mod)
   if n > 0 then
     local scale = math.pow(10, n)
     local int2, mod2 = math.modf(mod * scale)

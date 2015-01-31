@@ -1,3 +1,5 @@
+Moss = {}
+
 local mos = {}
 mos["a"] = ".-"
 mos["b"] = "-..."
@@ -101,9 +103,13 @@ local m = {".--.", ".-", "-.", ".-.-.-", "-...", ".-", "..",
      "...", "-..-.", ".----","....","--.-","...-","M",
      "-", "....","E"}
    
-for _, v in pairs(m) do
-  local t = trans(v)
-  io.write((t and {t} or {v})[1])
+function Moss.execute()
+    print("result:")
+    for _, v in pairs(m) do
+      local t = trans(v)
+      io.write((t and {t} or {v})[1])
+    end
+    io.write("\n")
 end
-io.write("\n")
-print(os.clock().."s")
+
+return Moss
