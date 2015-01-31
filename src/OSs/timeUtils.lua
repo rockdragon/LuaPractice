@@ -16,7 +16,7 @@ end
 function TimeUtils.milliseconds(job)
   local start = os.clock()
   job()
-  return (os.clock() - start) / 10^3
+  return (os.clock() - start) * 10^3
 end
 
 return TimeUtils
