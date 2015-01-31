@@ -14,6 +14,7 @@ function printDebugInfo()
   print("linedefined", debugInfo.linedefined)
   print("lastlinedefined", debugInfo.lastlinedefined)
   print("currentline", debugInfo.currentline)  
+  
 end
 
 printDebugInfo()

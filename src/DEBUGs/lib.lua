@@ -16,6 +16,11 @@ function Lib.print()
   print("linedefined", debugInfo.linedefined)
   print("lastlinedefined", debugInfo.lastlinedefined)
   print("currentline", debugInfo.currentline) 
+  if debugInfo.activelines ~= nil then
+    for k, v in pairs(debugInfo.activelines) do
+      print(k, v)
+    end
+  end
 end
 
 return Lib
