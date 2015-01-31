@@ -11,4 +11,7 @@ print("I'm awake. now:" .. os.date())
 local moss = require("strings.moss")
 local timeUtils = require("OSs.timeUtils")
 local seconds =  timeUtils.milliseconds(moss.execute)
-print("milliseconds:", seconds)
+print("milliseconds:", seconds .. "ms")
+
+os.setlocale("zh_CN", "time")
+print(os.date())
