@@ -14,7 +14,9 @@ end
 
 function getPrime(up)
   for i = 2, up do
-    if isPrime(i) then coroutine.yield(i) end
+    if not (i > 2 and i % 2 == 0) then -- filter out even-numbers greater than 2
+      if isPrime(i) then coroutine.yield(i) end
+    end
   end
 end
 
