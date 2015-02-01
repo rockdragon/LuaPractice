@@ -23,3 +23,18 @@ printDebugInfo()
 
 local Traceback = require("DEBUGs.traceback")
 Traceback.traceback()
+
+function foo(a, b)
+  local x 
+  local y
+  do local c = a + b end
+  local a = 1
+  while true do
+    local n, v = debug.getlocal(1, a)
+    if not n then break end
+    print(n, v)
+    a = a + 1
+  end
+end
+
+foo(10, 20)
