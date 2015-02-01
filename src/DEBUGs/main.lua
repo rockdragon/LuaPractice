@@ -1,3 +1,4 @@
+--[[
 local lib = require("DEBUGs.lib")
 
 lib.print()
@@ -18,3 +19,7 @@ function printDebugInfo()
 end
 
 printDebugInfo()
+--]]
+
+local Traceback = require("DEBUGs.traceback")
+Traceback.traceback()
