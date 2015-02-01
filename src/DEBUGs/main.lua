@@ -24,6 +24,8 @@ printDebugInfo()
 local Traceback = require("DEBUGs.traceback")
 Traceback.traceback()
 
+local Inspector = require("DEBUGs.inspector")
+
 function foo(a, b)
   local x 
   local y
@@ -35,6 +37,8 @@ function foo(a, b)
     print(n, v)
     a = a + 1
   end
+  print(Inspector.getvarvalue("a"))
 end
 
 foo(10, 20)
+
