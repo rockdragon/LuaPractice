@@ -22,6 +22,6 @@ debug.sethook()
 print("----------------function invocation times:")
 for k, v in pairs(Names) do
   if v.name then
-    print(v.name, "\t\t", Counters[k])
+    print(v.short_src, v.name, "\t\t", Counters[k])
   end
 end
