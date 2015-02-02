@@ -19,9 +19,20 @@ debug.sethook(hook, "c")
 f()
 debug.sethook()
 
-print("----------------function invocation times:")
-for k, v in pairs(Names) do
-  if v.name then
-    print(v.namewhat, v.name, "\t", Counters[k])
+function getname(func)
+  local n = Names[func]
+  if n.what == "C" then
+    return n.name
   end
+  local lc = string.format("[%s]:%s", n.short_src, n.linedefined)
+  if n.namewhat ~= "" then
+    return string.format("%s (%s)", lc, n.name)
+  else
+    return lc
+  end
+end
+
+print("----------------function invocation times:")
+for k, v in pairs(Counters) do
+  print(getname(k), v)
 end
