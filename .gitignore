@@ -30,3 +30,6 @@
 
 *.ppj
 *.ppx
+
+.DS_Store
+.idea
