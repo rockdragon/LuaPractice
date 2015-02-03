@@ -1,8 +1,13 @@
+#pragma comment(lib, "lua52.lib")
+
 #include <stdio.h>
 #include <string.h>
-#include "lua.h"
-#include "lauxlib.h"
-#include "lualib.h"
+
+#include "luaconf.h" 
+#include "lua.h"   
+#include "lualib.h"   
+#include "lauxlib.h"   
+
 
 int main(void){
 	char buff[256];
@@ -10,7 +15,7 @@ int main(void){
 	lua_State *L = luaL_newstate();
 	luaL_openlibs(L);
 
-	while(fget(buff, sizeof(buff), stdin) != NULL){
+	while(fgets(buff, sizeof(buff), stdin) != NULL){
 		error = luaL_loadbuffer(L, buff, strlen(buff), "line") ||
 			lua_pcall(L, 0, 0, 0);
 		if(error){

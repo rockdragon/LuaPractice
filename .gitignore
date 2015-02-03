@@ -30,6 +30,10 @@
 
 *.ppj
 *.ppx
+*.tag
+*.exe
 
 .DS_Store
 .idea
+
+output
