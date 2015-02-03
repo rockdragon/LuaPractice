@@ -3,12 +3,13 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "luaconf.h" 
 #include "lua.h"   
 #include "lualib.h"   
 #include "lauxlib.h"   
 
-
+/*
+	Lua interpreter
+*/
 int main(void){
 	char buff[256];
 	int error;
