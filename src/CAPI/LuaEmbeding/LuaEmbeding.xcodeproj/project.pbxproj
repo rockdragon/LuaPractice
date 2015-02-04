@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AF9DAF961A82473C004FDFB7 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = AF9DAF951A82473C004FDFB7 /* main.c */; };
+		AFF4574F1A825592000FC10B /* liblua.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AFF4574E1A825592000FC10B /* liblua.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		AF9DAF921A82473C004FDFB7 /* LuaEmbeding */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LuaEmbeding; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF9DAF951A82473C004FDFB7 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		AF9DAF9C1A825006004FDFB7 /* func.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = func.lua; sourceTree = "<group>"; };
+		AFF4574E1A825592000FC10B /* liblua.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = liblua.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFF4574F1A825592000FC10B /* liblua.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +62,8 @@
 			isa = PBXGroup;
 			children = (
 				AF9DAF951A82473C004FDFB7 /* main.c */,
+				AFF4574E1A825592000FC10B /* liblua.a */,
+				AF9DAF9C1A825006004FDFB7 /* func.lua */,
 			);
 			path = LuaEmbeding;
 			sourceTree = "<group>";
@@ -206,8 +212,13 @@
 					"$(inherited)",
 					"/Users/moye/Downloads/lua-5.2.3",
 				);
-				"HEADER_SEARCH_PATHS[arch=*]" = "$(SRCROOT)/LuaEmbeding/lua-5.2.3/src/";
-				"LIBRARY_SEARCH_PATHS[arch=*]" = "$(PROJECT_DIR)/LuaEmbeding";
+				"HEADER_SEARCH_PATHS[sdk=macosx*]" = "$(SRCROOT)/LuaEmbeding/lua-5.2.3/src/";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LuaEmbeding/lua-5.2.3/src",
+					"$(PROJECT_DIR)/LuaEmbeding",
+				);
+				"LIBRARY_SEARCH_PATHS[sdk=macosx*]" = "$(PROJECT_DIR)/LuaEmbeding";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -219,8 +230,13 @@
 					"$(inherited)",
 					"/Users/moye/Downloads/lua-5.2.3",
 				);
-				"HEADER_SEARCH_PATHS[arch=*]" = "$(SRCROOT)/LuaEmbeding/lua-5.2.3/src/";
-				"LIBRARY_SEARCH_PATHS[arch=*]" = "$(PROJECT_DIR)/LuaEmbeding";
+				"HEADER_SEARCH_PATHS[sdk=macosx*]" = "$(SRCROOT)/LuaEmbeding/lua-5.2.3/src/";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LuaEmbeding/lua-5.2.3/src",
+					"$(PROJECT_DIR)/LuaEmbeding",
+				);
+				"LIBRARY_SEARCH_PATHS[sdk=macosx*]" = "$(PROJECT_DIR)/LuaEmbeding";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -244,6 +260,7 @@
 				AF9DAF9B1A82473C004FDFB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
