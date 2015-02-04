@@ -12,15 +12,15 @@ int main(void){
 	int x = 10, y = 22, result = 0;
 
 	lua_State *L = luaL_newstate();
-	luaL_openlibs(L);							// ¼ÓÔØLua¿â
+	luaL_openlibs(L);							// åŠ è½½Luaåº“
 
 	if(luaL_loadfile(L, "func.lua") != 0)    	// load lua file
 		return 0;
 
-	lua_pcall(L, 0, LUA_MULTRET, 0);			//Ö´ĞĞÄäÃûº¯Êı£¬ÒÔ±àÒëÔ´´úÂë³É¶ş½øÖÆÂë
-                                            	//²¢½«È«¾Ö±äÁ¿Ñ¹Õ»£¨º¯ÊıÃûÒ²ÊÇ±äÁ¿£©
+	lua_pcall(L, 0, LUA_MULTRET, 0);			//æ‰§è¡ŒåŒ¿åå‡½æ•°ï¼Œä»¥ç¼–è¯‘æºä»£ç æˆäºŒè¿›åˆ¶ç 
+                                            	//å¹¶å°†å…¨å±€å˜é‡å‹æ ˆï¼ˆå‡½æ•°åä¹Ÿæ˜¯å˜é‡ï¼‰
 	lua_getglobal(L, "Func");
-	lua_getfield(L, -1, "add");					//¶¨Î»µ½º¯Êı
+	lua_getfield(L, -1, "add");					//å®šä½åˆ°å‡½æ•°
 	lua_pushnumber(L, x);
 	lua_pushnumber(L, y);
 
@@ -64,7 +64,6 @@ static void stackDump(lua_State *L){
 	}
 	printf("\n");
 }
-
 int main(void){
 	char buff[256];
 	int error;
@@ -73,12 +72,10 @@ int main(void){
 	
 	//ensure that there are at least 20 free stack
 	lua_checkstack(L, 20); 
-
 	lua_pushstring(L, "hello");
 	stackDump(L);
 	lua_remove(L, 0);
 	stackDump(L);
-
 	while(fgets(buff, sizeof(buff), stdin) != NULL){
 		error = luaL_loadbuffer(L, buff, strlen(buff), "line") ||
 			lua_pcall(L, 0, 0, 0);
@@ -87,7 +84,6 @@ int main(void){
 			lua_pop(L, 1);
 		}
 	}
-
 	lua_close(L);
 	return 0;
 }

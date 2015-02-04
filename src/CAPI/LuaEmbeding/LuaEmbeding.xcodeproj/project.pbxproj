@@ -202,6 +202,12 @@
 		AF9DAF9A1A82473C004FDFB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/moye/Downloads/lua-5.2.3",
+				);
+				"HEADER_SEARCH_PATHS[arch=*]" = "$(SRCROOT)/LuaEmbeding/lua-5.2.3/src/";
+				"LIBRARY_SEARCH_PATHS[arch=*]" = "$(PROJECT_DIR)/LuaEmbeding";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -209,6 +215,12 @@
 		AF9DAF9B1A82473C004FDFB7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/moye/Downloads/lua-5.2.3",
+				);
+				"HEADER_SEARCH_PATHS[arch=*]" = "$(SRCROOT)/LuaEmbeding/lua-5.2.3/src/";
+				"LIBRARY_SEARCH_PATHS[arch=*]" = "$(PROJECT_DIR)/LuaEmbeding";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
