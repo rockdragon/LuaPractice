@@ -15,6 +15,9 @@ int main(void){
 	int error;
 	lua_State *L = luaL_newstate();
 	luaL_openlibs(L);
+	
+	//ensure that there are at least 20 free stack
+	lua_checkstack(L, 20); 
 
 	while(fgets(buff, sizeof(buff), stdin) != NULL){
 		error = luaL_loadbuffer(L, buff, strlen(buff), "line") ||
