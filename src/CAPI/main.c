@@ -24,6 +24,9 @@ int main(void){
 	lua_pushnumber(L, x);
 	lua_pushnumber(L, y);
 
+	// stack retrieving by index
+	// printf("-2 is function? %d\n", lua_isfunction(L, -2)); 
+
  	if(lua_pcall(L, 2, 1, 0) != 0) {           // execute funciton
         printf("\nError running function 'add' : %s", 
 			lua_tostring(L, -1));
