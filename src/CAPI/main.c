@@ -20,6 +20,11 @@ int main(void){
 	lua_pcall(L, 0, LUA_MULTRET, 0);			//执行匿名函数，以编译源代码成二进制码
                                             	//并将全局变量压栈（函数名也是变量）
 	lua_getglobal(L, "Func");
+	if(!lua_istable(L, -1)){
+		printf("'Func' is not a table.");
+		return 0;
+	}
+
 	lua_getfield(L, -1, "add");					//定位到函数
 	lua_pushnumber(L, x);
 	lua_pushnumber(L, y);
