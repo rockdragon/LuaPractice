@@ -34,6 +34,13 @@ int main(int argc, const char* argv[]){
     lua_pop(L, 1);
     
     printf("Result: %d\n", result);
+    
+    lua_getfield(L, -1, "x");
+    result = (int)lua_tonumber(L, -1);
+    printf("x is: %d\n", result);
+    lua_pop(L, -1);
+    
+    printf("now stack top is: %d\n", lua_gettop(L));
 }
 
 /*
