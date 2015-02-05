@@ -6,13 +6,15 @@
 #include "lualib.h"
 #include "lauxlib.h"
 
-int main(void){
+int main(int argc, const char* argv[]){
+    printf("loading lua.\n");
+    
     int x = 10, y = 22, result = 0;
     
     lua_State *L = luaL_newstate();
     luaL_openlibs(L);							// 加载Lua库
     
-    if(luaL_loadfile(L, "func.lua") != 0)    	// load lua file
+    if(luaL_loadfile(L, "../../../../LuaEmbeding/func.lua") != 0)    	// load lua file
         return 0;
     
     lua_pcall(L, 0, LUA_MULTRET, 0);			//执行匿名函数，以编译源代码成二进制码
