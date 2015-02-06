@@ -10,6 +10,7 @@
 
 int main(void){
 	int x = 10, y = 22, result = 0;
+	printf("x : %d, y : %d\n", x, y);
 
 	lua_State *L = luaL_newstate();
 	luaL_openlibs(L);							// 加载Lua库
@@ -25,7 +26,7 @@ int main(void){
 		return 0;
 	}
 
-	lua_getfield(L, -1, "add");					//定位到函数
+	lua_getfield(L, -1, "add");					//定位到add函数
 	lua_pushnumber(L, x);
 	lua_pushnumber(L, y);
 
@@ -41,7 +42,22 @@ int main(void){
 	result = lua_tonumber(L, -1);
 	lua_pop(L, 1);
 
-	printf("Result: %d\n", result);
+	printf("x + y = %d\n", result);
+
+	lua_getfield(L, -1, "sub");					//定位到sub函数
+	lua_pushnumber(L, y);
+	lua_pushnumber(L, x);
+
+	if(lua_pcall(L, 2, 1, 0) != 0) {           // execute funciton
+        printf("\nError running function 'sub' : %s", 
+			lua_tostring(L, -1));
+        return 0;
+    }
+
+	result = lua_tonumber(L, -1);
+	lua_pop(L, 1);
+
+	printf("y - x = %d\n", result);
 }
 
 /*
