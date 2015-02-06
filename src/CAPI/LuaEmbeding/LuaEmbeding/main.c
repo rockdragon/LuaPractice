@@ -38,16 +38,11 @@ int main(int argc, const char* argv[]){
     lua_pcall(L, 0, LUA_MULTRET, 0);			//执行匿名函数，以编译源代码成二进制码
     
     // 第一种方式
-//并将全局变量压栈（函数名也是变量）
-//    lua_getglobal(L, "Func");
-//    lua_getfield(L, -1, "add");					//定位到函数
-    
-    //第二种方式
 //    lua_getglobal(L, "Func");
 //    lua_pushstring(L, "add");
 //    lua_gettable(L, -2);                          //定位到函数
     
-    //第三种方式
+    //第二种方式
     lua_getglobal(L, "Func");
     lua_getfield(L, -1, "add");                     //定位到函数
     lua_pushnumber(L, x);
