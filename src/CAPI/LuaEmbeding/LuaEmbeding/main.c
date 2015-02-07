@@ -24,6 +24,24 @@ int get_field(lua_State *L, const char *key){
     return result;
 }
 
+void set_field(lua_State *L, const char *index, int value){
+    lua_pushstring(L, index);
+    lua_pushnumber(L, (double)value/MAX_COLOR);
+    lua_settable(L, -3);    // set value into table[key]
+}
+
+struct ColorTable{
+    char *name;
+    unsigned char red, green, blue;
+} colortable[] = {
+    { "WHITE", MAX_COLOR, MAX_COLOR, MAX_COLOR },
+    { "BLACK", 0, 0, 0 },
+    { "RED", MAX_COLOR, 0, 0 },
+    { "GREEN", 0, MAX_COLOR, 0 },
+    { "BLUE", 0, 0, MAX_COLOR },
+    {NULL, 0, 0, 0}
+};
+
 int main(int argc, const char* argv[]){
     printf("loading lua.\n");
     
@@ -52,16 +70,25 @@ int main(int argc, const char* argv[]){
         error(L, lua_tostring(L, -1));
         return 0;
     }
-    
     result = lua_tonumber(L, -1);
     lua_pop(L, 1);
-    
     printf("Result: %d\n", result);
+    
     
     lua_getfield(L, -1, "x");
     result = (int)lua_tonumber(L, -1);
     printf("x is: %d\n", result);
-    lua_pop(L, -1);
+    lua_pop(L, 1);
+    
+    
+    lua_getfield(L, -1, "position");
+    if(lua_pcall(L, 0, 2, 0) != 0){
+        error(L, lua_tostring(L, -1));
+        return 0;
+    }
+    printf("position results: %d %d\n",
+           (int)lua_tonumber(L, -1), (int)lua_tonumber(L, -2));
+    lua_pop(L, 2);
     
     printf("now stack top is: %d\n", lua_gettop(L));
 }
