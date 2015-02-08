@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>FF30AA71-EBEA-46A5-892A-77F3C7A087C8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>mylib</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B9C8D41DD314265306829986DE973F26A9FAB2AF</key>
+		<string>https://github.com/rockdragon/LuaPractice</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>src/CAPI/mylib/mylib.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B9C8D41DD314265306829986DE973F26A9FAB2AF</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/rockdragon/LuaPractice</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B9C8D41DD314265306829986DE973F26A9FAB2AF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B9C8D41DD314265306829986DE973F26A9FAB2AF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>LuaPractice</string>
+		</dict>
+	</array>
+</dict>
+</plist>
