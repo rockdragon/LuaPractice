@@ -25,9 +25,8 @@ int get_field(lua_State *L, const char *key){
 }
 
 void set_field(lua_State *L, const char *index, int value){
-    lua_pushstring(L, index);
     lua_pushnumber(L, (double)value/MAX_COLOR);
-    lua_settable(L, -3);    // set value into table[key]
+    lua_setfield(L, -2, index);    // set value into table[key]
 }
 
 struct ColorTable{
@@ -41,6 +40,14 @@ struct ColorTable{
     { "BLUE", 0, 0, MAX_COLOR },
     {NULL, 0, 0, 0}
 };
+
+void set_color(lua_State *L, struct ColorTable *ct){
+    lua_newtable(L);
+    set_field(L, "r", ct->red);
+    set_field(L, "g", ct->green);
+    set_field(L, "b", ct->blue);
+    lua_setglobal(L, ct->name);
+}
 
 int main(int argc, const char* argv[]){
     printf("loading lua.\n");
@@ -90,6 +97,14 @@ int main(int argc, const char* argv[]){
            (int)lua_tonumber(L, -1), (int)lua_tonumber(L, -2));
     lua_pop(L, 2);
     
+    set_color(L, &colortable[3]);           // GREEN --> lua global
+    
+    lua_getfield(L, -1, "printcolor");
+    if(lua_pcall(L, 0, 0, 0) != 0){
+        error(L, lua_tostring(L, -1));
+        return 0;
+    }
+
     printf("now stack top is: %d\n", lua_gettop(L));
 }
 
